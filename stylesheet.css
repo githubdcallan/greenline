@@ -1,0 +1,85 @@
+ 
+.cards
+{
+    list-style-type: none;
+    color: White;
+    width: 100%;
+    padding: 0px;
+}
+
+.cards li
+{
+    margin-top: 10px;
+    margin-left: 0px;
+    margin-right: 0px;
+    
+    /* rounded corners to make look like GL cards */
+    border-radius: 0px 45px 45px 0px; 
+    -moz-border-radius: 0px 45px 45px 0px; 
+    -webkit-border-radius: 0px 45px 45px 0px; 
+
+    height: 150px;
+    font-weight:bolder;    
+    padding-left: 30px;
+}
+
+.cards.red li
+{
+     background-color: #f00;
+     font-size: 25px;
+}
+
+.cards.green li
+{
+     background-color: #459e00;
+     font-size: 40px;
+}
+
+.cards li span {
+    height: 130px; 
+    display: table-cell; 
+    vertical-align: bottom
+}
+
+ 
+/* header */
+#header img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* jquery ui tabs theme overides */
+#tabs-min { 
+    background: transparent; 
+    border: none; 
+} 
+#tabs-min .ui-widget-header { 
+    background: transparent; 
+    border: none; 
+    border-bottom: 1px solid #c0c0c0; 
+    -moz-border-radius: 0px; 
+    -webkit-border-radius: 0px; 
+    border-radius: 0px; 
+} 
+#tabs-min .ui-tabs-nav .ui-state-default { 
+    background: transparent; 
+    border: none; 
+} 
+#tabs-min .ui-tabs-nav .ui-state-active { 
+    background: transparent url(images/uiTabsArrow.png) no-repeat bottom center; 
+    border: none; 
+} 
+#tabs-min .ui-tabs-nav .ui-state-default a { 
+    color: #c0c0c0; 
+} 
+
+/* GREEN */
+#tabs-min .ui-tabs-nav .ui-state-active a[href="#tabs-1"] { 
+    color: #459e00; 
+}
+
+/* RED */
+#tabs-min .ui-tabs-nav .ui-state-active a[href="#tabs-2"] { 
+    color: #f00;
+}

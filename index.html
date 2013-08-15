@@ -9,49 +9,108 @@
 <script type="text/javascript" src="cardview.js"></script>
 
 <script type="text/javascript">
-
-var deck;
-var data = [
-	{
-		img: 'img1.jpg',
-		title: 'Card 1',
-		text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
-	},
-	{
-		img: 'img2.jpg',
-		title: 'Card 2',
-		text: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
-	},
-	{
-		img: 'img3.jpg',
-		title: 'Card 3',
-		text: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.'
-	},
-	{
-		img: 'img4.jpg',
-		title: 'Card 4',
-		text: 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
-	},
-	{
-		img: 'img5.jpg',
-		title: 'Card 5',
-		text: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.'
-	}	
-];
-
-function loaded () {
-	deck = new CardView('#wrapper', {
-		dataset: data,
-		onUpdateContent: function (el, data) {
-			el.querySelector('img').src = data.img;
-			el.querySelector('h3').innerHTML = data.title;
-			el.querySelector('p').innerHTML = data.text;
-		}
-	});
-}
-
-document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
-
+    var deck;
+    var data = [
+        {
+            img: 'img1.jpg',
+            title: 'Card 1',
+            text: 'ENQUIRE',
+            color: '#459e00'
+        },
+        {
+            img: 'img2.jpg',
+            title: 'Card 2',
+            text: 'HEAR',
+            color: '#459e00'
+        },
+        {
+            img: 'img3.jpg',
+            title: 'Card 3',
+            text: 'RELFECT',
+            color: '#459e00'
+        },
+        {
+            img: 'img4.jpg',
+            title: 'Card 4',
+            text: 'STRAIGHT <br/>TALK',
+            color: '#459e00'
+        },
+        {
+            img: 'img5.jpg',
+            title: 'Card 5',
+            text: 'AGREE TO <br/>"THERE"',
+            color: '#459e00'
+        },
+        {
+            img: 'img5.jpg',
+            title: 'Card 5',
+            text: 'AGREE TO <br/>"HERE"',
+            color: '#459e00'
+        },
+        {
+            img: 'img5.jpg',
+            title: 'Card 5',
+            text: 'AGREE TO <br/>NEXT STEPS',
+            color: '#459e00'
+        },
+        {
+            img: 'img5.jpg',
+            title: 'Card 5',
+            text: 'FAILING TO CLARIFY THE "THERE" UPFONT',
+            color: '#f00'
+        },
+        {
+            img: 'img5.jpg',
+            title: 'Card 5',
+            text: 'TALKING <br/>TOO MUCH <br/>(VS LISTENTING)',
+            color: '#f00'
+        },
+        {
+            img: 'img5.jpg',
+            title: 'Card 5',
+            text: 'ASKING <br/>LEADING QUESTIONS',
+            color: '#f00'
+        },
+        {
+            img: 'img5.jpg',
+            title: 'Card 5',
+            text: 'FAILURE TO <br/>ACKNOWLEDGE <br/>OTHER\'S CONCERN',
+            color: '#f00'
+        },
+        {
+            img: 'img5.jpg',
+            title: 'Card 5',
+            text: 'MAKING <br/>ASSUMPTIONS',
+            color: '#f00'
+        },
+        {
+            img: 'img5.jpg',
+            title: 'Card 5',
+            text: 'GIVING <br/>YOUR SOLUTION',
+            color: '#f00'
+        },
+        {
+            img: 'img5.jpg',
+            title: 'Card 5',
+            text: 'AVOIDING <br/>HONEST FEEDBACK',
+            color: '#f00'
+        }
+    ];
+    function loaded() {
+        deck = new CardView('#wrapper', {
+            dataset: data,
+            onUpdateContent: function (el, data) {
+                
+                //regular javascript, not jquery.
+                
+                //el.querySelector('img').src = data.img;
+                //el.querySelector('h3').innerHTML = data.title;
+                el.querySelector('div').innerHTML = data.text;
+                el.querySelector('div').style.backgroundColor = data.color;
+            }
+        });
+    }
+    document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
 </script>
 
 <style>
@@ -75,7 +134,6 @@ body, ul, li, h1, h2, h3, img, p {
 body {
 	/* On modern browsers, prevent the whole page to bounce */
 	overflow: hidden;
-	background-color: #aaa;
 	font-size: 12px;
 }
 
@@ -118,8 +176,10 @@ body {
 	z-index: 10;
 	width: 100%;
 	height: 100%;
-
-	background: #ccc;
+    
+    color: White;
+    font-size: 30px;
+    font-weight: bolder
 }
 
 .card {
@@ -141,14 +201,23 @@ body {
 	position: relative;
 	width: 100%;
 	height: 100%;
-	border: 2px solid #aaa;
+	border: 0px solid #aaa;
 	padding: 20px;
-	border-radius: 10px;
+	
+    
+    border-radius: 0px 55px 55px 0px; 
+    -moz-border-radius: 0px 55px 55px 0px; 
+    -webkit-border-radius: 0px 55px 55px 0px; 
+    
 	background: #fff;
 	background-position: 50% 50%;
 	background-size: 95% 95%;
 	background-repeat: no-repeat;
 	font-size: 1.6em;
+    
+    /*height: 130px; 
+    display: table-cell; 
+    vertical-align: bottom*/
 }
 
 .card img {
@@ -170,25 +239,10 @@ body {
 
 <div id="wrapper">
 	<ul id="deck">
-		<li class="card"><div>
-			<h3>Title</h3>
-			<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAADElEQVQI12P4//8/AAX+Av7czFnn
-AAAAAElFTkSuQmCC" alt="thumb" width="125" height="125">
-			<p>Text</p>
-		</div></li>
-		<li class="card"><div>
-			<h3>Title</h3>
-			<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAADElEQVQI12P4//8/AAX+Av7czFnn
-AAAAAElFTkSuQmCC" alt="thumb" width="125" height="125">
-			<p>Text</p>
-		</div></li>
-		<li class="card"><div>
-			<h3>Title</h3>
-			<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAADElEQVQI12P4//8/AAX+Av7czFnn
-AAAAAElFTkSuQmCC" alt="thumb" width="125" height="125">
-			<p>Text</p>
-		</div></li>
-	</ul>
+        <li class="card"><div></div></li>
+        <li class="card"><div></div></li>
+        <li class="card"><div></div></li>
+     </ul>
 </div>
 
 </body>
