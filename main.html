@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+
+<title>Cardview</title>
+
+<script type="text/javascript" src="cardview.js"></script>
+
+<script type="text/javascript">
+    var deck;
+    var data = [
+        {
+            img: 'img1.jpg',
+            title: 'Card 1',
+            text: 'ENQUIRE',
+            color: '#459e00'
+        },
+        {
+            img: 'img2.jpg',
+            title: 'Card 2',
+            text: 'HEAR',
+            color: '#459e00'
+        },
+        {
+            img: 'img3.jpg',
+            title: 'Card 3',
+            text: 'RELFECT',
+            color: '#459e00'
+        },
+        {
+            img: 'img4.jpg',
+            title: 'Card 4',
+            text: 'STRAIGHT <br/>TALK',
+            color: '#459e00'
+        },
+        {
+            img: 'img5.jpg',
+            title: 'Card 5',
+            text: 'AGREE TO <br/>"THERE"',
+            color: '#459e00'
+        },
+        {
+            img: 'img5.jpg',
+            title: 'Card 5',
+            text: 'AGREE TO <br/>"HERE"',
+            color: '#459e00'
+        },
+        {
+            img: 'img5.jpg',
+            title: 'Card 5',
+            text: 'AGREE TO <br/>NEXT STEPS',
+            color: '#459e00'
+        },
+        {
+            img: 'img5.jpg',
+            title: 'Card 5',
+            text: 'FAILING TO <br/>CLARIFY THE <br/>"THERE" UPFONT',
+            color: '#f00'
+        },
+        {
+            img: 'img5.jpg',
+            title: 'Card 5',
+            text: 'TALKING <br/>TOO MUCH <br/>(VS LISTENING)',
+            color: '#f00'
+        },
+        {
+            img: 'img5.jpg',
+            title: 'Card 5',
+            text: 'ASKING <br/>LEADING QUESTIONS',
+            color: '#f00'
+        },
+        {
+            img: 'img5.jpg',
+            title: 'Card 5',
+            text: 'FAILURE TO <br/>ACKNOWLEDGE <br/>OTHER\'S CONCERN',
+            color: '#f00'
+        },
+        {
+            img: 'img5.jpg',
+            title: 'Card 5',
+            text: 'MAKING <br/>ASSUMPTIONS',
+            color: '#f00'
+        },
+        {
+            img: 'img5.jpg',
+            title: 'Card 5',
+            text: 'GIVING <br/>YOUR SOLUTION',
+            color: '#f00'
+        },
+        {
+            img: 'img5.jpg',
+            title: 'Card 5',
+            text: 'AVOIDING <br/>HONEST FEEDBACK',
+            color: '#f00'
+        }
+    ];
+    function loaded() {
+        deck = new CardView('#wrapper', {
+            dataset: data,
+            onUpdateContent: function (el, data) {
+                
+                //regular javascript, not jquery.
+                
+                //el.querySelector('img').src = data.img;
+                //el.querySelector('h3').innerHTML = data.title;
+                el.querySelector('span').innerHTML = data.text;
+                el.querySelector('div').style.backgroundColor = data.color;
+            }
+        });
+    }
+    document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+</script>
+
+<style>
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+body, html {
+	height: 100%;
+}
+
+body, ul, li, h1, h2, h3, img, p {
+	padding: 0;
+	margin: 0;
+	border: 0;
+	list-style: none;
+}
+
+body {
+	/* On modern browsers, prevent the whole page to bounce */
+	overflow: hidden;
+	font-size: 12px;
+}
+
+#wrapper {
+	position: absolute;
+	z-index: 1;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	overflow: hidden;
+
+	/* Prevent native touch events on Windows */
+	-ms-touch-action: none;
+
+	/* Prevent the callout on tap-hold and text selection */
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+
+	/* Prevent elements to be highlighted on tap */
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+
+	/* Prevent text resize on orientation change, useful for web-apps */
+	-webkit-text-size-adjust: none;
+	-moz-text-size-adjust: none;
+	-ms-text-size-adjust: none;
+	-o-text-size-adjust: none;
+	text-size-adjust: none;
+}
+
+#deck {
+	position: relative;
+	z-index: 10;
+	width: 100%;
+	height: 100%;
+    
+    color: White;
+    font-size: 25px;
+    font-weight: bolder
+}
+
+.card {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	padding: 10px;
+	z-index: 10;
+
+	/* Put the scroller into the HW Compositing layer right from the start */
+	-webkit-transform: translateZ(0);
+	-moz-transform: translateZ(0);
+	-ms-transform: translateZ(0);
+	-o-transform: translateZ(0);
+	transform: translateZ(0);
+}
+
+.card div {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	border: 0px solid #aaa;
+	padding: 20px;
+	
+    
+    border-radius: 0px 55px 55px 0px; 
+    -moz-border-radius: 0px 55px 55px 0px; 
+    -webkit-border-radius: 0px 55px 55px 0px; 
+    
+	background: #fff;
+	background-position: 50% 50%;
+	background-size: 95% 95%;
+	background-repeat: no-repeat;
+	font-size: 1.6em;
+    
+    
+}
+    
+    .card span
+    {
+        height: inherit;
+        display: table-cell;
+        vertical-align: bottom 
+    }
+
+.card img {
+	float: left;
+	margin: 0 10px 10px 0;
+	border: 1px solid #000;
+}
+
+.card h3 {
+	background-color: #aaa;
+	padding: 8px;
+	margin-bottom: 10px;
+	text-align: center;
+}
+    
+    
+    
+    
+    
+    
+</style>
+
+</head>
+<body onload="loaded()">
+
+<div id="wrapper">
+	<ul id="deck">
+        <li class="card"><div><span></span></div></li>
+        <li class="card"><div><span></span></div></li>
+        <li class="card"><div><span></span></div></li>
+     </ul>
+</div>
+
+</body>
+</html>
