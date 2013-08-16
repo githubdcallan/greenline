@@ -1,85 +1,111 @@
- 
-.cards
-{
-    list-style-type: none;
-    color: White;
-    width: 100%;
-    padding: 0px;
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
 }
 
-.cards li
-{
-    margin-top: 10px;
-    margin-left: 0px;
-    margin-right: 0px;
+body, html {
+	height: 100%;
+}
+
+body, ul, li, h1, h2, h3, img, p {
+	padding: 0;
+	margin: 0;
+	border: 0;
+	list-style: none;
+}
+
+body {
+	/* On modern browsers, prevent the whole page to bounce */
+	overflow: hidden;
+	font-size: 12px;
+}
+
+#wrapper {
+	position: absolute;
+	z-index: 1;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	overflow: hidden;
+
+	/* Prevent native touch events on Windows */
+	-ms-touch-action: none;
+
+	/* Prevent the callout on tap-hold and text selection */
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+
+	/* Prevent elements to be highlighted on tap */
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+
+	/* Prevent text resize on orientation change, useful for web-apps */
+	-webkit-text-size-adjust: none;
+	-moz-text-size-adjust: none;
+	-ms-text-size-adjust: none;
+	-o-text-size-adjust: none;
+	text-size-adjust: none;
+}
+
+#deck {
+	position: relative;
+	z-index: 10;
+	width: 100%;
+	height: 100%;
     
-    /* rounded corners to make look like GL cards */
-    border-radius: 0px 45px 45px 0px; 
-    -moz-border-radius: 0px 45px 45px 0px; 
-    -webkit-border-radius: 0px 45px 45px 0px; 
-
-    height: 150px;
-    font-weight:bolder;    
-    padding-left: 30px;
+    color: White;
+    font-size: 25px;
+    font-weight: bolder
 }
 
-.cards.red li
+.card {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	padding: 10px;
+	z-index: 10;
+
+	/* Put the scroller into the HW Compositing layer right from the start */
+	-webkit-transform: translateZ(0);
+	-moz-transform: translateZ(0);
+	-ms-transform: translateZ(0);
+	-o-transform: translateZ(0);
+	transform: translateZ(0);
+}
+
+.card div {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	border: 0px solid #aaa;
+	padding: 20px;
+	
+    
+    border-radius: 0px 55px 55px 0px; 
+    -moz-border-radius: 0px 55px 55px 0px; 
+    -webkit-border-radius: 0px 55px 55px 0px; 
+    
+	background: #fff;
+	background-position: 50% 50%;
+	background-size: 95% 95%;
+	background-repeat: no-repeat;
+	font-size: 1.6em;
+    
+    background-image:url('greentile.png');
+    background-repeat: repeat;
+    background-size: 4px 4px;
+    
+    display: table;
+}
+    
+.card span
 {
-     background-color: #f00;
-     font-size: 25px;
-}
-
-.cards.green li
-{
-     background-color: #459e00;
-     font-size: 40px;
-}
-
-.cards li span {
-    height: 130px; 
-    display: table-cell; 
-    vertical-align: bottom
-}
-
- 
-/* header */
-#header img {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-/* jquery ui tabs theme overides */
-#tabs-min { 
-    background: transparent; 
-    border: none; 
-} 
-#tabs-min .ui-widget-header { 
-    background: transparent; 
-    border: none; 
-    border-bottom: 1px solid #c0c0c0; 
-    -moz-border-radius: 0px; 
-    -webkit-border-radius: 0px; 
-    border-radius: 0px; 
-} 
-#tabs-min .ui-tabs-nav .ui-state-default { 
-    background: transparent; 
-    border: none; 
-} 
-#tabs-min .ui-tabs-nav .ui-state-active { 
-    background: transparent url(images/uiTabsArrow.png) no-repeat bottom center; 
-    border: none; 
-} 
-#tabs-min .ui-tabs-nav .ui-state-default a { 
-    color: #c0c0c0; 
-} 
-
-/* GREEN */
-#tabs-min .ui-tabs-nav .ui-state-active a[href="#tabs-1"] { 
-    color: #459e00; 
-}
-
-/* RED */
-#tabs-min .ui-tabs-nav .ui-state-active a[href="#tabs-2"] { 
-    color: #f00;
+    display: table-cell;
+    vertical-align: bottom;
 }
