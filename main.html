@@ -26,7 +26,7 @@
         {
             img: 'img3.jpg',
             title: 'Card 3',
-            text: 'RELFECT',
+            text: 'REFLECT',
             color: '#459e00'
         },
         {
@@ -114,6 +114,52 @@
 </script>
 
 <style>
+    
+    
+    
+    
+    
+    
+    
+    
+    html,
+body {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+#center {
+    position: relative;
+    display: block;
+    top: 50%;
+    margin-top: -1000px;
+    height: 2000px;
+    text-align: center;
+    line-height: 2000px;
+}    
+#wrap {
+    line-height: 0;
+}
+#wrap img {
+    vertical-align: middle;
+}
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 * {
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
@@ -215,32 +261,7 @@ body {
     
     
 }
-    
-    .card span
-    {
-        height: inherit;
-        display: table-cell;
-        vertical-align: bottom 
-    }
-
-.card img {
-	float: left;
-	margin: 0 10px 10px 0;
-	border: 1px solid #000;
-}
-
-.card h3 {
-	background-color: #aaa;
-	padding: 8px;
-	margin-bottom: 10px;
-	text-align: center;
-}
-    
-    
-    
-    
-    
-    
+   
 </style>
 
 </head>
@@ -248,11 +269,12 @@ body {
 
 <div id="wrapper">
 	<ul id="deck">
-        <li class="card"><div><span></span></div></li>
-        <li class="card"><div><span></span></div></li>
-        <li class="card"><div><span></span></div></li>
+        <li class="card"><div style="display: table; height: 100%"><span style="display: table-cell; vertical-align: bottom"></span></div></li>
+        <li class="card"><div style="display: table; height: 100%"><span style="display: table-cell; vertical-align: bottom"></span></div></li>
+        <li class="card"><div style="display: table; height: 100%"><span style="display: table-cell; vertical-align: bottom"></span></div></li>
      </ul>
 </div>
+
 
 </body>
 </html>
